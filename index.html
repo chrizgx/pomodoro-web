@@ -17,7 +17,17 @@
             <div class="timer">{{ Math.trunc(remainingSeconds / 60) }}:{{ remainingSecondsFix }}</div>
             <div class="wave" v-bind:style="{minHeight: percentage + '%'}" v-bind:class="{'study-wave': state=='study', 'break-wave': state == 'break'}"></div>
         </div>
-        <button onclick="app.study();">STUDY</button>
+
+        <div class="button-container" v-if="state == 'await'">
+            <button onclick="app.study();">STUDY</button>
+        </div>
+        <div class="button-container" v-if="state != 'await' && update == true" >
+            <button>pause</button>
+        </div>
+        <div class="button-container" v-if="state != 'await' && update == false">
+            <button>Reset</button>
+            <button>Resume</button>
+        </div>
     </main>
 </body>
 </html>
