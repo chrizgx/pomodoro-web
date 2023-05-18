@@ -51,11 +51,25 @@ main {
     color: white;
     display: flex;
     justify-content: space-around;
-    min-height: 200px;
-    min-width: 200px;
+    /* min-height: 50vw;
+    min-width: 50vw; */
     overflow: hidden;
     position: relative;
     top: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+    .bubble {
+        min-height: 50vw;
+        min-width: 50vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .bubble {
+        min-height: 50vh;
+        min-width: 50vh;
+    }
 }
 
 .timer {
@@ -85,7 +99,24 @@ main {
     background-color: var(--c-fill-break);
 }
 
-button {
+.button-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+button, button:active, button:focus {
+    background-color: #fff3;
+    border: 1px white solid;
+    border-radius: 50px;
+    color: white;
     display: inline-block;
+    flex-grow: 1;
+    font-size: 1.2rem;
+    margin: 2%;
+    min-width: 46%;
+    outline: none;
+    padding: 6px;
     position:relative;
 }

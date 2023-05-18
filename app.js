@@ -1,8 +1,8 @@
 const app = new Vue({
     el: '#app',
     data: {
-        studySession: 5 * 1,
-        breakSession: 10 * 1,
+        studySession: 60 * 1,
+        breakSession: 60 * 0.5,
         remainingSeconds: this.studySession,
         start: null,
         state: 'await',
@@ -33,6 +33,9 @@ const app = new Vue({
                 difference = this.findDifference(new Date());
             } else if (this.state === 'break' && difference > this.breakSession) {
                 this.remainingSeconds = this.studySession;
+                this.updateStart();
+                this.state = 'study';
+                difference = this.findDifference(new Date());
             }
 
             if (this.state === 'await') {
@@ -53,6 +56,18 @@ const app = new Vue({
         study: function() {
             this.updateStart();
             this.state = 'study';
+            this.update = true;
+        },
+        pause: function() {
+            this.update = false;
+        },
+        resume: function() {
+            this.start = new Date(Date.now() - this.remainingSeconds*1000);
+            this.update = true;
+        },
+        reset: function() {
+            this.state = 'await';
+            this.update = true;
         }
     }
 })
