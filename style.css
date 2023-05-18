@@ -8,35 +8,39 @@
 
 html, body {
     /* background-color: #fcffb2; */
+    align-items: center;
     background-color: var(--c-background);
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     z-index: 1;
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 nav {
     position: fixed;
-    background-color: white;
+    top: 0%;
+    background-color: rgb(243, 241, 241);
     flex-grow: inherit;
     min-width: 100%;
     padding-left: 2rem;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
 }
 
 nav p {
     color: var(--c-background);
     font-size: 2rem;
     line-height: 0rem;
-    /* margin: auto; */
 }
 
 main {
     display: flex;
     flex-direction: column;
-
+    position: relative;
 }
 
 .bubble {
@@ -49,7 +53,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: absolute;
+    position: relative;
     top: 20%;
     overflow: hidden;
     border: 2px solid white;
@@ -64,14 +68,13 @@ main {
 }
 
 .wave {
-    /* min-height: 20%; */
-    min-width: 100%;
-    margin: auto;
-    position: absolute;
     bottom: 0;
-    z-index: 0;
+    margin: auto;
+    min-width: 100%;
+    position: absolute;
     transition-duration: 1.1s;
     transition-timing-function: linear;
+    z-index: 0;
 }
 
 .study-wave {
