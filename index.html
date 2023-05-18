@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+    <script src="/app.js" defer></script>
+    <title>Pomodoro Timer</title>
+</head>
+<body id="">
+    <nav></nav>
+    <main class="bubble" id="app">
+        <div class="timer">{{ Math.trunc(remainingSeconds / 60) }}:{{ remainingSecondsFix }}</div>
+        <div class="wave" v-bind:style="{minHeight: percentage + '%'}" v-bind:class="{'study-wave': state=='study', 'break-wave': state == 'break'}"></div>
+    </main>
+    <button onclick="app.study();">STUDY</button>
+</body>
+</html>

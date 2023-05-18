@@ -1,0 +1,50 @@
+html, body {
+    background-color: #fcffb2;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+}
+
+main {
+    align-self: center;
+    background-color: white;
+    min-height: 200px;
+    min-width: 200px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 20%;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+.timer {
+    z-index: 1;
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin-bottom: -5px;
+}
+
+.wave {
+    /* min-height: 20%; */
+    min-width: 100%;
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    z-index: 0;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+.study-wave {
+    background-color: #16FF00;
+}
+
+.break-wave {
+    background-color: orange;
+}
