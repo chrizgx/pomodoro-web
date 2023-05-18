@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
-        studySession: 60 * 1,
+        studySession: 10 * 1,
         breakSession: 60 * 0.5,
         remainingSeconds: this.studySession,
         start: null,
@@ -62,7 +62,11 @@ const app = new Vue({
             this.update = false;
         },
         resume: function() {
-            this.start = new Date(Date.now() - this.remainingSeconds*1000);
+            if (this.state === 'study') {
+                this.start = new Date(Date.now() - (this.studySession-this.remainingSeconds) * 1000);
+            } else {
+                this.start = new Date(Date.now() - (this.breakSession - this.remainingSeconds) * 1000);
+            }
             this.update = true;
         },
         reset: function() {

@@ -13,6 +13,9 @@
         <p class="nav-name">Pomodoro</p>
     </nav>
     <main class="" id="app">
+        <p class="description" v-if="state == 'await'">Welcome</p>
+        <p class="description" v-if="state == 'study'">Study</p>
+        <p class="description" v-if="state == 'break'">Break</p>
         <div class="bubble">
             <div class="timer">{{ Math.trunc(remainingSeconds / 60) }}:{{ remainingSecondsFix }}</div>
             <div class="wave" v-bind:style="{minHeight: percentage + '%'}" v-bind:class="{'study-wave': state=='study', 'break-wave': state == 'break'}"></div>
