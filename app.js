@@ -1,8 +1,8 @@
 const app = new Vue({
     el: '#app',
     data: {
-        studySession: 10 * 1,
-        breakSession: 60 * 0.5,
+        studySession: 60 * 25,
+        breakSession: 60 * 5,
         remainingSeconds: this.studySession,
         start: null,
         state: 'await',
