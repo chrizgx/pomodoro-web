@@ -25,7 +25,7 @@ const app = new Vue({
     methods: {
         updateRemainingSeconds: function() {
             if (!this.update) return this.remainingSeconds;
-            const difference = this.findDifference(new Date());
+            let difference = this.findDifference(new Date());
             if (this.state === 'study' && difference > this.studySession) {
                 this.remainingSeconds = this.breakSession;
                 this.updateStart();
